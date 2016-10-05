@@ -40,9 +40,9 @@ namespace CollaboratorUI
 
             //Create an Authorization header in order to authenticate as required
             // by the ProductStoreBLL REST Service.
-            string credentials = WebConfigurationManager.AppSettings["CollaboratorBLLRESTServiceCredentials"];
-            client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Custom", credentials);
+            //string credentials = WebConfigurationManager.AppSettings["CollaboratorBLLRESTServiceCredentials"];
+            //client.DefaultRequestHeaders.Authorization =
+            //    new AuthenticationHeaderValue("Custom", credentials);
 
             return client;
         }
