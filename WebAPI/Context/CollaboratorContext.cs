@@ -11,12 +11,13 @@ namespace WebAPI.Context
     {
         public CollaboratorContext(): base("Collaboratorv2")
         {
+            Configuration.LazyLoadingEnabled = false;
             Database.SetInitializer(new ContextInitializer());
         }
         public DbSet<Email> Emails { get; set; }
 
         public DbSet<SearchCriteria> SearchCriterias { get; set; }
 
-        public System.Data.Entity.DbSet<WebAPI.Models.Theme> Themes { get; set; }
+        public DbSet<Theme> Themes { get; set; }
     }
 }
