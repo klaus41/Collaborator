@@ -19,7 +19,7 @@ namespace WebAPI.Models
         }
         [Key]
         [DataMember]
-        public string ID { get; set; }
+        public int ID { get; set; }
         [DataMember]
         public string Sender { get; set; }
         [DataMember]

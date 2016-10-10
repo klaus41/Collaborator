@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebAPI.Context;
+using WebAPI.EmailManager;
 using WebAPI.Models;
 
 namespace WebAPI.Controllers
@@ -16,16 +17,18 @@ namespace WebAPI.Controllers
     public class EmailsController : ApiController
     {
         private CollaboratorContext db = new CollaboratorContext();
+        private EmailReader er = new EmailReader();
 
         // GET: api/Emails
         public IQueryable<Email> GetEmails()
         {
+            er.GetAllEmails("klaus@eliteit.dk", "Kg240789.");
             return db.Emails;
         }
 
         // GET: api/Emails/5
         [ResponseType(typeof(Email))]
-        public IHttpActionResult GetEmail(string id)
+        public IHttpActionResult GetEmail(int id)
         {
             Email email = db.Emails.Find(id);
             if (email == null)
@@ -38,7 +41,7 @@ namespace WebAPI.Controllers
 
         // PUT: api/Emails/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutEmail(string id, Email email)
+        public IHttpActionResult PutEmail(int id, Email email)
         {
             if (!ModelState.IsValid)
             {
@@ -58,7 +61,7 @@ namespace WebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmailExists(id))
+                if (!EmailExists(id.ToString()))
                 {
                     return NotFound();
                 }
@@ -88,7 +91,7 @@ namespace WebAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (EmailExists(email.ID))
+                if (EmailExists(email.ID.ToString()))
                 {
                     return Conflict();
                 }
@@ -128,7 +131,7 @@ namespace WebAPI.Controllers
 
         private bool EmailExists(string id)
         {
-            return db.Emails.Count(e => e.ID == id) > 0;
+            return db.Emails.Count(e => e.ID.ToString() == id) > 0;
         }
     }
 }

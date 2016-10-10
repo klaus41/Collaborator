@@ -88,3 +88,5 @@ c:\users\klaus\documents\visual studio 2015\Projects\CollaboratorFinal\WebAPI\bi
 c:\users\klaus\documents\visual studio 2015\Projects\CollaboratorFinal\WebAPI\obj\Debug\WebAPI.csprojResolveAssemblyReference.cache
 c:\users\klaus\documents\visual studio 2015\Projects\CollaboratorFinal\WebAPI\obj\Debug\WebAPI.dll
 c:\users\klaus\documents\visual studio 2015\Projects\CollaboratorFinal\WebAPI\obj\Debug\WebAPI.pdb
+C:\Users\klaus\Documents\Visual Studio 2015\Projects\CollaboratorFinal\WebAPI\bin\Microsoft.Exchange.WebServices.dll
+C:\Users\klaus\Documents\Visual Studio 2015\Projects\CollaboratorFinal\WebAPI\bin\Microsoft.Exchange.WebServices.xml

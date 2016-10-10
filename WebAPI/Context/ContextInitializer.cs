@@ -8,7 +8,7 @@ using WebAPI.Models;
 
 namespace WebAPI.Context
 {
-    public class ContextInitializer : DropCreateDatabaseIfModelChanges<CollaboratorContext>
+    public class ContextInitializer : DropCreateDatabaseAlways<CollaboratorContext>
     {
         protected override void Seed(CollaboratorContext context)
         {
@@ -24,7 +24,7 @@ namespace WebAPI.Context
 
             Email email1 = context.Emails.Add(new Email()
             {
-                ID = "førsteID",
+                
                 BodyText = "Første bodytext Første bodytext Første bodytext Første bodytext Første bodytext Første bodytext" +
                             "Første bodytext Første bodytext Første bodytext Første bodytext ",
                 Recipiant = "klausgaarde@live.dk",
@@ -36,7 +36,7 @@ namespace WebAPI.Context
 
             Email email2 = context.Emails.Add(new Email()
             {
-                ID = "andetID",
+                
                 BodyText = "Anden bodytext Anden bodytext Anden bodytext Anden bodytext Anden bodytext Anden bodytext Anden" +
                             "Anden bodytext Anden bodytext Anden bodytext Anden bodytext Anden bodytext ",
                 Recipiant = "klausgaarde@live.dk",
