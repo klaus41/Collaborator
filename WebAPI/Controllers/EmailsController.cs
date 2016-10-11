@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         // GET: api/Emails
         public IQueryable<Email> GetEmails()
         {
-            er.GetAllEmails("klaus@eliteit.dk", "Kg240789.");
+            er.GetAllEmails("klausgaarde@live.dk", "klaus240789");
             return db.Emails;
         }
 
