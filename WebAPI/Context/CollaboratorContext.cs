@@ -9,7 +9,7 @@ namespace WebAPI.Context
 {
     public class CollaboratorContext : DbContext
     {
-        public CollaboratorContext(): base("Collaboratorv2")
+        public CollaboratorContext(): base("Collaborator")
         {
             Configuration.LazyLoadingEnabled = false;
             Database.SetInitializer(new ContextInitializer());

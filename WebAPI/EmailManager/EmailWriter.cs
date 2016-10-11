@@ -37,7 +37,10 @@ namespace WebAPI.EmailManager
                 {
                     email.Recipiant = message.ReceivedBy.Address;
                 }
-                catch { }
+                catch
+                {
+                    
+                }
 
                 email.Sender = message.Sender.Address;
                 email.ReceivedDate = item.DateTimeReceived;

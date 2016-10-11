@@ -12,7 +12,7 @@ namespace WebAPI.EmailManager
     {
         ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2007_SP1);
         EmailWriter ew = new EmailWriter();
-        List<Email> emails;
+        Indexer indexer = new Indexer();
 
         private static bool RedirectionUrlValidationCallback(string redirectionUrl)
         {
@@ -54,27 +54,23 @@ namespace WebAPI.EmailManager
 
             ItemView view = new ItemView(100000);
             FindItemsResults<Item> findResults = service.FindItems(WellKnownFolderName.Inbox, view);
-          
-
-            emails = ew.EmailConverter(findResults, userName);
-            ew.SaveEmails(emails);
-
             return findResults;
-
         }
 
         private ExchangeService Login(string userName, string password)
         {
 
-            
+
             service.Credentials = new WebCredentials(userName, password);
-            if (userName.Contains("dk"))
-            {
-                userName.Replace("dk", "com");
-            }
+            //if (userName.Contains("dk"))
+            //{
+            //    userName.Replace("dk", "com");
+            //}
             service.AutodiscoverUrl(userName, RedirectionUrlValidationCallback);
 
             return service;
         }
+
+
     }
 }

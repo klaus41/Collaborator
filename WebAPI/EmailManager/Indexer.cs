@@ -13,20 +13,24 @@ namespace WebAPI.EmailManager
         private CollaboratorContext db = new CollaboratorContext();
         DbSet<Email> emails;
         DbSet<SearchCriteria> searchCriterias;
+
+
         public void IndexAllEmails()
         {
             emails = db.Emails;
             searchCriterias = db.SearchCriterias;
-            foreach (var email in emails)
+
+            foreach (var searchCriteria in searchCriterias)
             {
-                foreach (var searchCriteria in searchCriterias)
+                foreach (var email in emails)
                 {
                     if (email.BodyText.Contains(searchCriteria.Criteria))
                     {
-                        //email.SearchCriteria = searchCriteria;
+                        email.SearchCriteria.Add(searchCriteria);
                     }
                 }
             }
+            db.SaveChanges();
         }
     }
 }

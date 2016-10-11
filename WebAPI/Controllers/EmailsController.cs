@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Exchange.WebServices.Data;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -22,7 +23,6 @@ namespace WebAPI.Controllers
         // GET: api/Emails
         public IQueryable<Email> GetEmails()
         {
-            er.GetAllEmails("klausgaarde@live.dk", "klaus240789");
             return db.Emails;
         }
 
@@ -133,5 +133,6 @@ namespace WebAPI.Controllers
         {
             return db.Emails.Count(e => e.ID.ToString() == id) > 0;
         }
+
     }
 }
