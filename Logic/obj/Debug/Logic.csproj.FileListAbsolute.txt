@@ -68,3 +68,6 @@ C:\Users\klaus\Documents\Visual Studio 2015\Projects\CollaboratorFinal\Logic\bin
 C:\Users\klaus\Documents\Visual Studio 2015\Projects\CollaboratorFinal\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
 C:\Users\klaus\Documents\Visual Studio 2015\Projects\CollaboratorFinal\Logic\obj\Debug\Logic.dll
 C:\Users\klaus\Documents\Visual Studio 2015\Projects\CollaboratorFinal\Logic\obj\Debug\Logic.pdb
+D:\EliteIT\Collaboration - GitHub\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
+D:\EliteIT\Collaboration - GitHub\Logic\obj\Debug\Logic.dll
+D:\EliteIT\Collaboration - GitHub\Logic\obj\Debug\Logic.pdb
